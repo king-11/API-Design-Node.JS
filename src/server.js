@@ -5,6 +5,12 @@ import cors from 'cors'
 <<<<<<< HEAD
 =======
 import { connect } from './utils/db'
+<<<<<<< HEAD
+=======
+import { signup, signin, protect } from './utils/auth'
+
+import userRouter from './resources/user/user.router'
+>>>>>>> ada13d9... paths protected
 import itemRouter from './resources/item/item.router'
 >>>>>>> 005beab... exercise 2 make routes using router done
 
@@ -16,6 +22,14 @@ app.use(cors())
 app.use(json())
 app.use(urlencoded({ extended: true }))
 app.use(morgan('dev'))
+<<<<<<< HEAD
+=======
+app.post('/signup', signup)
+app.post('/signin', signin)
+
+app.use('/api', protect)
+app.use('/api/user', userRouter)
+>>>>>>> ada13d9... paths protected
 app.use('/api/item', itemRouter)
 
 const router = express.Router()
